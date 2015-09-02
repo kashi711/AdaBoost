@@ -66,22 +66,16 @@ int main(){
 	//学習データの入力
 	filename = "learning_data.txt";
 	ifstream fi(filename);
-	//cout << "正例を入力してください" << endl;
 	cout << "positive_sample : " << endl;
 	for(i=0;i<pos;i++){
-		//cin >> positive[i].x1;
-		//cin >> positive[i].x2;
 		fi >> positive[i].x1;
 		fi >> positive[i].x2;
 		positive[i].y = 1;
 		cout << "( " << positive[i].x1 << " , " << positive[i].x2 << " )" << endl;
 	}
 	cout << endl;
-	//cout << "負例を入力してください" << endl;
 	cout << "negative_sample : " << endl;
 	for(i=0;i<neg;i++){
-		//cin >> negative[i].x1;
-		//cin >> negative[i].x2;
 		fi >> negative[i].x1;
 		fi >> negative[i].x2;
 		negative[i].y = -1;
@@ -163,9 +157,6 @@ int main(){
 		//テストデータの入力
 		fi2 >> test.x1;
 		fi2 >> test.x2;
-		//cout << "テストデータを入力してください" << endl;
-		//cin >> test.x1;
-		//cin >> test.x2;
 
 		//統合仮説による判別
 		temp_ans = 0.0;
@@ -184,26 +175,6 @@ int main(){
 
 	}
 	fi2.close();
-	/*
-	while(flag == 1){
-		//テストデータの入力
-		cout << "テストデータを入力してください" << endl;
-		cin >> test.x1;
-		cin >> test.x2;
-
-		//統合仮説による判別
-		temp_ans = 0.0;
-		for(i=0;i<f.size();i++){
-			temp_ans += alpha[i]*hypothesis_test(f[i].pos_number,f[i].neg_number);
-		}
-		ans = sign(temp_ans);
-
-		//結果出力
-		cout << "テスト事例の答えは " << ans << " です" << endl;
-		cout << endl;
-
-	}
-	*/
 }
 
 // 仮説の計算
